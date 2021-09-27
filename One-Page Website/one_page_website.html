@@ -3,6 +3,7 @@
 	<head> 
 		<meta charset="utf-8">
 		<title>Gypsy Moons Animal Rescue</title> 
+		<script src="JS/one_page_website.js" defer></script>
 		<link rel="stylesheet" href="./css/one_page_website.css">
 		
 	</head> 
@@ -32,87 +33,145 @@
 		<!--END HOME--> 
 		
 		<!--GALLERY--> 
-		<section> 
-			<div id="gallery"> 
-				<h1>Previous Rescues Gallery</h1>
-				<div> 
-				
-					<!--PHOTO-CONTAINER 1--> 
-					<div> 
-						<div> 
-							<p>Ninja; a bottle fed kitten who made a great recovery.</p>
-							<img src="./images/picture_1.jpg" alt="Before and after photos of a black and white kitten, with text that shows 5 week difference" width="400" height="300"><br>
-							<p>__________________________________________________</p>
-						</div> 
-					</div>
-					<!--END PHOTO-CONTAINER 1--> 
-					
-					<!--PHOTO-CONTAINER 2--> 
-					<div> 
-						<div> 
-							<p>Marshmallow, Cleo and Rhino, bottle fed kittens.</p>
-							<img src="./images/picture_2.jpg" alt="image of a two white kittens with a black kitten in between them" width="400" height="300"><br>
-							<p>__________________________________________________</p>
-						</div> 
-					</div>
-					<!--END PHOTO-CONTAINER 2--> 
-					
-					<!--PHOTO-CONTAINER 3--> 
-					<div> 
-						<div> 
-							<p> Ninja and his siblings with my rescue cat.</p>
-							<img src="./images/picture_3.jpg" alt="image of three kittens sleeping on top of a grown cat" width="400" height="300"><br>
-							<p>__________________________________________________</p>
-						</div> 
-					</div>
-					<!--END PHOTO-CONTAINER 3--> 
-					
-					<!--PHOTO-CONTAINER 4--> 
-					<div> 
-						<div> 
-							<p> Gin and Tonic, two rescued siblings.</p>
-							<img src="./images/picture_4.jpg" alt="image of two kittens sleeping together" width="400" height="300"><br>
-							<p>__________________________________________________</p>
-						</div> 
-					</div>
-					<!--END PHOTO-CONTAINER 4--> 
-					
-					<!--PHOTO-CONTAINER 5--> 
-					<div> 
-						<div> 
-							<p> Litter of all girl kittens eating wet food for the first time.</p>
-							<img src="./images/picture_5.jpg" alt="image of five kittens surrounding a paper plate eating wet cat food" width="400" height="300"><br>
-							<p>__________________________________________________</p>
-						</div> 
-					</div>
-					<!--END PHOTO-CONTAINER 5--> 
-					
-					<!--PHOTO-CONTAINER 6--> 
-					<div> 
-						<div> 
-							<p> Rescue mom with her litter of babies.</p>
-							<img src="./images/picture_6.jpg" alt="image of a mother cat laying down with her five kittens nursing" width="400" height="300"> 
-							<p>__________________________________________________</p>
-						</div> 
-					</div>
-					<!--END PHOTO-CONTAINER 6--> 
-					
-					<!--VIDEO CONTAINER 1--> 
-					<div> 
-						<div> 
-							<p> Siren eating out of a bottle, he prefers to stand up.</p>
-							<video width="400" height="500" autoplay muted>
-							<source src="./images/SirenBottle.mov" type="video/mp4">						
-							</video>
-						</div>
-					</div>
-					
-				
+		<div class="row"> 
+			<div class="column"> 
+				<img src="./images/picture_1.jpg" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shaddow cursor"> 
+			</div> 
+			<div class="column"> 
+				<img src="./images/picture_2.jpg" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shaddow cursor"> 
+			</div>  
+			<div class="column"> 
+				<img src="./images/picture_3.jpg" style="width:100%" onclick="openModal();currentSlide(3)" class="hover-shaddow cursor"> 
+			</div> 
+			<div class="column"> 
+				<img src="./images/picture_4.jpg" style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shaddow cursor"> 
+			</div>  
+			<div class="column"> 
+				<img src="./images/picture_5.jpg" style="width:100%" onclick="openModal();currentSlide(5)" class="hover-shaddow cursor"> 
+			</div> 
+			<div class="column"> 
+				<img src="./images/picture_6.jpg" style="width:100%" onclick="openModal();currentSlide(6)" class="hover-shaddow cursor"> 
+			</div> 
+		</div> 
+
+		<!-- The Modal/Lightbox --> 
+		<div id="myModal" class="modal"> 
+			<span class="close cursor" onclick="closeModal()">&times;</span> 
+			<div class="modal-content"> 
+
+				<div class="mySlides"> 
+					<div class="numbertext">1 / 6</div> 
+					<img src="./images/picture_1.jpg" style="width:100%">
+				</div> 
+
+				<div class="mySlides"> 
+					<div class="numbertext">2 / 6</div> 
+					<img src="./images/picture_2.jpg" style="width:100%">
+				</div> 
+
+				<div class="mySlides"> 
+					<div class="numbertext">3 / 6</div> 
+					<img src="./images/picture_3.jpg" style="width:100%">
+				</div> 
+
+				<div class="mySlides"> 
+					<div class="numbertext">4 / 6</div> 
+					<img src="./images/picture_4.jpg" style="width:100%">
+				</div> 
+
+				<div class="mySlides"> 
+					<div class="numbertext">5 / 6</div> 
+					<img src="./images/picture_5.jpg" style="width:100%">
+				</div> 
+
+				<div class="mySlides"> 
+					<div class="numbertext">6 / 6</div> 
+					<img src="./images/picture_6.jpg" style="width:100%">
 				</div>
+
+				<!-- Next/Previous Controls --> 
+				<a class="prev" onclick="plusSlides(-1)"&#10094;></a> 
+				<a class="next" onclick="plusSlides(1)"&#10095;></a> 
+
+				<!-- Caption Text --> 
+				<div class="caption-container"> 
+					<p id="caption"></p>
+				</div> 
+
+				<!-- Thumbnail image controls --> 
+				<div class="column"> 
+					<img class="demo" src="./images/picture_1.jpg" style="width:100%" onclick="currentSlide(1)" alt="Beofre and after of raising a sick black and white kitten"> 
+				</div> 
+
+				<div class="column"> 
+					<img class="demo" src="./images/picture_2.jpg" style="width:100%" onclick="currentSlide(2)" alt="Three kittens next to each other, two white, black one is in the middle"> 
+				</div> 
+
+				<div class="column"> 
+					<img class="demo" src="./images/picture_3.jpg" style="width:100%" onclick="currentSlide(3)" alt="Adult cat laying on couch with three kittens laying on him"> 
+				</div> 
+
+				<div class="column"> 
+					<img class="demo" src="./images/picture_4.jpg" style="width:100%" onclick="currentSlide(4)" alt="Two kittens cuddling/sleeping, one is black the other is dark grey/brown with black stripes "> 
+				</div> 
+
+				<div class="column"> 
+					<img class="demo" src="./images/picture_5.jpg" style="width:100%" onclick="currentSlide(5)" alt="Overhead picture of five kittens eating wet food from a peper place, three long hair, two short hair"> 
+				</div> 
+
+				<div class="column"> 
+					<img class="demo" src="./images/picture_6.jpg" style="width:100%" onclick="currentSlide(6)" alt="Black calico mom cat laying in a box looking off camera while feeding five kittens, three orange, one calico and one orange/grey striped "> 
+				</div> 
 			</div>
-		</section>
-		<!-- END GALLERY -->
+		</div> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<!--END GALLERY-->	
 		
+		
+
+
+
 		<!-- RSVP --> 
 		<div id="contact"> 
             <div class="container">
